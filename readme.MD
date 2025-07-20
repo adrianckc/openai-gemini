@@ -175,3 +175,17 @@ Implemented via [`inlineData`](https://ai.google.dev/api/caching#Part).
 - [ ] `completions`
 - [x] `embeddings`
 - [x] `models`
+
+### Remove sensitive data from text files
+
+A utility script `scripts/Remove-SensitiveData.ps1` is available to redact
+common fields such as `username`, `password`, `server` and `pcname` in a
+configuration file.
+
+Usage:
+
+```powershell
+./scripts/Remove-SensitiveData.ps1 -InputPath <file> [-OutputPath <sanitized-file>]
+```
+
+If `-OutputPath` is omitted, the original file is overwritten.
